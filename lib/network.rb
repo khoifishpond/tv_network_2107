@@ -51,11 +51,16 @@ class Network
     @shows.each do |show|
       show.characters.each do |character|
         actor_in_shows.each_key do |actor|
-          require 'pry'; binding.pry
           actor_in_shows[actor] << show if character.actor == actor
         end
       end
     end
     actor_in_shows
+  end
+
+  def prolific_actors
+    shows_by_actor.filter_map do |key, value|
+      key if value.length > 1
+    end
   end
 end

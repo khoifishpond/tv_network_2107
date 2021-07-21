@@ -76,13 +76,13 @@ describe Network do
       expect(@nbc.main_characters).to eq([@kitt])
     end
 
-    xit 'can list actors by show' do
+    it 'can list actors by show' do
       @nbc.add_show(@knight_rider)
       @nbc.add_show(@parks_and_rec)
       
       expect(@nbc.actors_by_show).to eq({
         @knight_rider => ["David Hasselhoff", "William Daniels"],
-        @parks_and_rec => ["Amy Peohler", "Nick Offerman"]
+        @parks_and_rec => ["Amy Poehler", "Nick Offerman"]
       })
     end
 
@@ -97,6 +97,14 @@ describe Network do
         "Amy Poehler" => [@parks_and_rec],
         "Nick Offerman" => [@parks_and_rec]
       })
+    end
+
+    it 'can display prolific actors' do
+      @nbc.add_show(@knight_rider)
+      @nbc.add_show(@baywatch)
+      @nbc.add_show(@parks_and_rec)
+      
+      expect(@nbc.prolific_actors).to eq(["David Hasselhoff"])
     end
   end
 end
