@@ -4,7 +4,11 @@ require './lib/character'
 describe Character do
   context 'Attributes' do
     before(:each) do
-      @kitt = Character.new({name: "KITT", actor: "William Daniels", salary: 1_000_000})
+      @kitt = Character.new({
+        name: "KITT",
+        actor: "William Daniels",
+        salary: 1_000_000
+        })
     end
 
     it 'exists' do

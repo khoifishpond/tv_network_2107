@@ -15,7 +15,11 @@ describe Show do
         actor: "David Hasselhoff",
         salary: 1_600_000
         })
-      @knight_rider = Show.new("Knight Rider", "Glen Larson", [@michael_knight, @kitt])
+      @knight_rider = Show.new(
+        "Knight Rider",
+        "Glen Larson",
+        [@michael_knight, @kitt]
+        )
     end
 
     it 'exists' do
